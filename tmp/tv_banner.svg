@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="tvBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#092613" />
+      <stop offset="40%" stop-color="#0F3D20" />
+      <stop offset="100%" stop-color="#166534" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#86EFAC" />
+    </linearGradient>
+    <filter id="tvGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- TV Backdrop -->
+  <rect width="1280" height="720" fill="url(#tvBg)" />
+
+  <!-- Background Radar Grid & Arcs -->
+  <circle cx="280" cy="360" r="320" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="4" />
+  <circle cx="280" cy="360" r="220" fill="none" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="4" />
+  <circle cx="280" cy="360" r="120" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="4" />
+
+  <!-- Left Icon Group -->
+  <g transform="translate(40, 20)">
+    <!-- Shelf Base -->
+    <rect x="100" y="480" width="340" height="28" rx="14" fill="#E2E8F0" />
+
+    <!-- Pantry Carton -->
+    <path d="M 140 310 L 175 250 L 235 250 L 270 310 L 270 470 L 140 470 Z" fill="#FFFFFF" />
+    <path d="M 175 250 L 235 250 L 235 310 L 175 310 Z" fill="#CBD5E1" />
+    <rect x="165" y="340" width="80" height="80" rx="12" fill="#38BDF8" />
+    <circle cx="205" cy="380" r="20" fill="#10B981" />
+    <path d="M 197 380 L 203 386 L 213 374" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Apple -->
+    <path d="M 350 380 C 340 330 295 330 275 360 C 255 330 210 330 200 380 C 180 460 240 480 275 480 C 310 480 370 460 350 380 Z" fill="#EF4444" />
+    <path d="M 275 345 C 290 315 325 310 335 315 C 335 335 310 355 275 345 Z" fill="#4ADE80" />
+
+    <!-- Expiry Radar Radar Sweep -->
+    <path d="M 350 240 A 150 150 0 0 1 440 330" fill="none" stroke="#FDE047" stroke-width="14" stroke-linecap="round" filter="url(#tvGlow)" />
+    <path d="M 315 275 A 100 100 0 0 1 380 340" fill="none" stroke="#FACC15" stroke-width="10" stroke-linecap="round" />
+    <circle cx="295" cy="305" r="12" fill="#EAB308" />
+  </g>
+
+  <!-- Right Side Title & Tagline -->
+  <text x="560" y="360" font-family="Roboto, sans-serif" font-weight="900" font-size="96" fill="url(#textGrad)" letter-spacing="2">ShelfLife</text>
+  <text x="565" y="430" font-family="Roboto, sans-serif" font-weight="500" font-size="36" fill="#A7F3D0" letter-spacing="1">Smart Pantry Inventory &amp; Expiry Radar</text>
+
+  <!-- Pill Badges -->
+  <g transform="translate(565, 470)">
+    <rect x="0" y="0" width="180" height="48" rx="24" fill="#15803D" fill-opacity="0.8" stroke="#4ADE80" stroke-width="2" />
+    <text x="90" y="31" font-family="Roboto, sans-serif" font-weight="700" font-size="20" fill="#FFFFFF" text-anchor="middle">Expiry Alert</text>
+
+    <rect x="200" y="0" width="180" height="48" rx="24" fill="#15803D" fill-opacity="0.8" stroke="#4ADE80" stroke-width="2" />
+    <text x="290" y="31" font-family="Roboto, sans-serif" font-weight="700" font-size="20" fill="#FFFFFF" text-anchor="middle">Zero Waste</text>
+
+    <rect x="400" y="0" width="200" height="48" rx="24" fill="#15803D" fill-opacity="0.8" stroke="#4ADE80" stroke-width="2" />
+    <text x="500" y="31" font-family="Roboto, sans-serif" font-weight="700" font-size="20" fill="#FFFFFF" text-anchor="middle">Rescue Recipes</text>
+  </g>
+</svg>

@@ -2,5 +2,7 @@
   "name": "ShelfLife",
   "description": "Smart pantry inventory & expiry radar app with barcode scanning and TheMealDB recipe matching.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

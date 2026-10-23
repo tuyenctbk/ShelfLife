@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F3D20" />
+      <stop offset="50%" stop-color="#166534" />
+      <stop offset="100%" stop-color="#15803D" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded canvas -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)" />
+
+  <!-- Background Radar Rings -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="6" />
+  <circle cx="256" cy="256" r="130" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="6" />
+
+  <!-- Shelf Base -->
+  <rect x="110" y="370" width="292" height="24" rx="12" fill="#E2E8F0" />
+
+  <!-- Pantry Carton (Milk/Juice) -->
+  <path d="M 140 230 L 170 180 L 220 180 L 250 230 L 250 360 L 140 360 Z" fill="#FFFFFF" />
+  <path d="M 170 180 L 220 180 L 220 230 L 170 230 Z" fill="#E2E8F0" />
+  <rect x="160" y="260" width="70" height="70" rx="10" fill="#38BDF8" />
+  <!-- Carton Fresh Badge -->
+  <circle cx="195" cy="295" r="18" fill="#10B981" />
+  <path d="M 188 295 L 193 300 L 203 290" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Fresh Red Apple -->
+  <path d="M 320 280 C 310 240 270 240 250 265 C 230 240 190 240 180 280 C 160 350 220 370 250 370 C 280 370 340 350 320 280 Z" fill="#EF4444" />
+  <!-- Apple highlight -->
+  <path d="M 220 270 C 210 280 205 300 210 320" fill="none" stroke="#FCA5A5" stroke-width="8" stroke-linecap="round" />
+  <!-- Apple Leaf -->
+  <path d="M 250 250 C 265 225 295 220 305 225 C 305 240 285 260 250 250 Z" fill="#4ADE80" />
+
+  <!-- Expiry Radar Sweeps with Yellow/Emerald Glow -->
+  <path d="M 320 170 A 130 130 0 0 1 400 250" fill="none" stroke="#FDE047" stroke-width="12" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M 290 200 A 90 90 0 0 1 350 260" fill="none" stroke="#FACC15" stroke-width="10" stroke-linecap="round" />
+  <circle cx="270" cy="225" r="10" fill="#EAB308" />
+</svg>
