@@ -59,6 +59,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.R
 import com.example.data.model.PantryItem
+import com.example.ui.engagement.EngagementManager
 import com.example.ui.engagement.PrivacyPolicyDialog
 import com.example.ui.engagement.RateAppDialog
 import com.example.ui.engagement.ShareAppDialog
@@ -70,6 +71,7 @@ fun PantryStatsScreen(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
+    val engagementManager = remember { EngagementManager(context) }
     val activeItems by viewModel.rawActiveItems.collectAsState()
     val consumedItems by viewModel.consumedItems.collectAsState()
     val wastedItems by viewModel.wastedItems.collectAsState()
@@ -328,7 +330,17 @@ fun PantryStatsScreen(
                             iconTint = Color(0xFF0284C7),
                             title = stringResource(R.string.btn_check_updates),
                             onClick = {
-                                Toast.makeText(context, context.getString(R.string.app_up_to_date), Toast.LENGTH_SHORT).show()
+                                val currentVer = try {
+                                    context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: "1.0"
+                                } catch (_: Exception) {
+                                    "1.0"
+                                }
+                                val latestVer = engagementManager.getLatestAvailableVersion()
+                                if (latestVer != null && engagementManager.isNewerVersion(currentVer, latestVer)) {
+                                    showUpdateDialog = true
+                                } else {
+                                    Toast.makeText(context, context.getString(R.string.app_up_to_date), Toast.LENGTH_SHORT).show()
+                                }
                             }
                         )
                         SettingsRow(
@@ -412,24 +424,46 @@ fun PantryStatsScreen(
 
     if (showRateDialog) {
         RateAppDialog(
-            onDismiss = { showRateDialog = false },
-            onRateNow = { showRateDialog = false },
-            onNeverAskAgain = { showRateDialog = false }
+            onDismiss = {
+                engagementManager.onUserDismissedRating(false)
+                showRateDialog = false
+            },
+            onRateNow = {
+                engagementManager.onUserRated()
+                showRateDialog = false
+            },
+            onNeverAskAgain = {
+                engagementManager.onUserDismissedRating(true)
+                showRateDialog = false
+            }
         )
     }
 
     if (showShareDialog) {
         ShareAppDialog(
-            onDismiss = { showShareDialog = false },
-            onShare = { showShareDialog = false }
+            onDismiss = {
+                engagementManager.onUserDismissedShare()
+                showShareDialog = false
+            },
+            onShare = {
+                engagementManager.onUserShared()
+                showShareDialog = false
+            }
         )
     }
 
     if (showUpdateDialog) {
+        val targetVer = engagementManager.getLatestAvailableVersion() ?: "1.1"
         UpdateAppDialog(
-            latestVersion = "1.0",
-            onDismiss = { showUpdateDialog = false },
-            onUpdate = { showUpdateDialog = false }
+            latestVersion = targetVer,
+            onDismiss = {
+                engagementManager.onUserDismissedUpdate(targetVer)
+                showUpdateDialog = false
+            },
+            onUpdate = {
+                engagementManager.onUserUpdated(targetVer)
+                showUpdateDialog = false
+            }
         )
     }
 

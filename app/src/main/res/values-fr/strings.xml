@@ -84,17 +84,17 @@
     <string name="btn_remove">Supprimer</string>
     <string name="splash_loading">Chargement du Radar de péremption...</string>
     <string name="rate_dialog_title">Vous aimez ShelfLife ?</string>
-    <string name="rate_dialog_message">Vous avez évité le gaspillage alimentaire ! Votre avis sur Google Play aide d\'autres familles.</string>
+    <string name="rate_dialog_message">Vous avez sauvé des courses du gaspillage ! Votre avis sur Google Play aide d\'autres familles à réduire le gaspillage alimentaire.</string>
     <string name="rate_dialog_confirm">Noter sur Google Play</string>
     <string name="rate_dialog_later">Plus tard</string>
     <string name="rate_dialog_never">Ne plus demander</string>
-    <string name="share_dialog_title">Partagez la mission zéro gaspi !</string>
-    <string name="share_dialog_message">Faites des économies et préservez les ressources avec ShelfLife.</string>
-    <string name="share_dialog_confirm">Partager l\'application</string>
+    <string name="share_dialog_title">Partagez la mission antigaspi !</string>
+    <string name="share_dialog_message">Vous faites de réelles économies et préservez la planète avec ShelfLife. Recommandez-le à vos proches !</string>
+    <string name="share_dialog_confirm">Partager ShelfLife</string>
     <string name="share_dialog_dismiss">Pas maintenant</string>
-    <string name="share_text_content">Découvrez ShelfLife: Smart Pantry &amp; Expiry Radar ! Suivez les dates de péremption et cuisinez des recettes antigaspi : https://play.google.com/store/apps/details?id=com.aistudio.shelflife.pzqk</string>
+    <string name="share_text_content">Découvrez ShelfLife: Smart Pantry &amp; Expiry Radar ! Suivez les dates de péremption grâce au scanner et cuisinez des recettes antigaspillage : https://play.google.com/store/apps/details?id=com.soloprono.shelflife</string>
     <string name="update_dialog_title">Mise à jour disponible</string>
-    <string name="update_dialog_message">La version %1$s est prête avec de meilleures fonctionnalités.</string>
+    <string name="update_dialog_message">La version %1$s est disponible avec une reconnaissance de code-barres améliorée et de nouvelles recettes.</string>
     <string name="update_dialog_confirm">Mettre à jour</string>
     <string name="update_dialog_later">Plus tard</string>
     <string name="privacy_policy_title">Politique de confidentialité</string>

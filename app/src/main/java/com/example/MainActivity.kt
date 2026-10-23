@@ -65,6 +65,9 @@ import com.example.ui.SplashScreen
 import com.example.ui.engagement.EngagementManager
 import com.example.ui.engagement.RateAppDialog
 import com.example.ui.engagement.ShareAppDialog
+import com.example.ui.engagement.SuggestionType
+import com.example.ui.engagement.UpdateAppDialog
+import kotlinx.coroutines.delay
 import com.example.ui.theme.EmeraldPrimary
 import com.example.ui.theme.ShelfLifeTheme
 
@@ -109,16 +112,45 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
     val userMessage by viewModel.userMessage.collectAsState()
     val expiringItems by viewModel.expiringSoonItems.collectAsState()
 
+    val currentVersionName = remember {
+        try {
+            context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: "1.0"
+        } catch (_: Exception) {
+            "1.0"
+        }
+    }
+
     var showAutoRateDialog by remember { mutableStateOf(false) }
     var showAutoShareDialog by remember { mutableStateOf(false) }
+    var showAutoUpdateDialog by remember { mutableStateOf(false) }
+    var autoUpdateTargetVersion by remember { mutableStateOf("") }
 
-    // Record launch and evaluate smart prompt triggers
+    // Evaluates next suggestion according to usage milestones, priority and cooldowns
+    fun checkAndTriggerAutoSuggestion() {
+        when (val suggestion = engagementManager.checkNextAutoSuggestion(currentVersionName)) {
+            SuggestionType.UPDATE -> {
+                val target = engagementManager.getLatestAvailableVersion() ?: "1.1"
+                autoUpdateTargetVersion = target
+                engagementManager.markSuggestionShown(SuggestionType.UPDATE, target)
+                showAutoUpdateDialog = true
+            }
+            SuggestionType.RATE -> {
+                engagementManager.markSuggestionShown(SuggestionType.RATE)
+                showAutoRateDialog = true
+            }
+            SuggestionType.SHARE -> {
+                engagementManager.markSuggestionShown(SuggestionType.SHARE)
+                showAutoShareDialog = true
+            }
+            SuggestionType.NONE -> Unit
+        }
+    }
+
+    // Record launch and evaluate smart prompt triggers after a non-intrusive settle delay
     LaunchedEffect(Unit) {
         engagementManager.recordLaunch()
-        if (engagementManager.shouldShowRatingPrompt()) {
-            engagementManager.markRatingPromptShown()
-            showAutoRateDialog = true
-        }
+        delay(2500) // Never interrupt user during initial cold start transition
+        checkAndTriggerAutoSuggestion()
     }
 
     // Handle back button: if not on Pantry tab, return to Pantry tab
@@ -128,14 +160,13 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
 
     LaunchedEffect(userMessage) {
         userMessage?.let { msg ->
-            snackbarHostState.showSnackbar(msg)
             if (msg.contains("Saved", ignoreCase = true) || msg.contains("waste", ignoreCase = true)) {
                 engagementManager.recordRescuedItem()
-                if (engagementManager.shouldShowSharePrompt()) {
-                    engagementManager.markSharePromptShown()
-                    showAutoShareDialog = true
-                }
+                checkAndTriggerAutoSuggestion()
+            } else if (msg.contains("Added", ignoreCase = true)) {
+                engagementManager.recordItemAdded()
             }
+            snackbarHostState.showSnackbar(msg)
             viewModel.clearUserMessage()
         }
     }
@@ -298,6 +329,21 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
                 }
             }
         }
+    }
+
+    if (showAutoUpdateDialog) {
+        val targetVer = autoUpdateTargetVersion.ifBlank { "1.1" }
+        UpdateAppDialog(
+            latestVersion = targetVer,
+            onDismiss = {
+                engagementManager.onUserDismissedUpdate(targetVer)
+                showAutoUpdateDialog = false
+            },
+            onUpdate = {
+                engagementManager.onUserUpdated(targetVer)
+                showAutoUpdateDialog = false
+            }
+        )
     }
 
     if (showAutoRateDialog) {

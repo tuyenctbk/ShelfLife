@@ -84,18 +84,18 @@
     <string name="btn_remove">Eliminar</string>
     <string name="splash_loading">Iniciando Radar de Caducidad...</string>
     <string name="rate_dialog_title">¿Te gusta ShelfLife?</string>
-    <string name="rate_dialog_message">¡Has rescatado alimentos de la basura! Tu valoración en Google Play ayuda a más familias a evitar el desperdicio.</string>
+    <string name="rate_dialog_message">¡Has evitado que tus alimentos se desperdicien! Tu reseña en Google Play ayuda a más familias a ahorrar y no tirar comida.</string>
     <string name="rate_dialog_confirm">Calificar en Google Play</string>
-    <string name="rate_dialog_later">Más tarde</string>
-    <string name="rate_dialog_never">No volver a mostrar</string>
+    <string name="rate_dialog_later">Quizás luego</string>
+    <string name="rate_dialog_never">No volver a preguntar</string>
     <string name="share_dialog_title">¡Comparte la misión cero desperdicio!</string>
-    <string name="share_dialog_message">Ahorra dinero y cuida el planeta con ShelfLife. ¡Recomiéndalo a amigos!</string>
+    <string name="share_dialog_message">Has ahorrado dinero y comida con ShelfLife. ¡Recomiéndalo a tus amigos y familiares!</string>
     <string name="share_dialog_confirm">Compartir ShelfLife</string>
     <string name="share_dialog_dismiss">Ahora no</string>
-    <string name="share_text_content">¡Prueba ShelfLife: Smart Pantry &amp; Expiry Radar! Gestiona fechas de caducidad y cocina recetas con lo que está por vencer: https://play.google.com/store/apps/details?id=com.aistudio.shelflife.pzqk</string>
+    <string name="share_text_content">¡Descubre ShelfLife: Smart Pantry &amp; Expiry Radar! Controla fechas de caducidad con escáner de códigos de barras y cocina deliciosas recetas antigaspi: https://play.google.com/store/apps/details?id=com.soloprono.shelflife</string>
     <string name="update_dialog_title">Actualización disponible</string>
-    <string name="update_dialog_message">La versión %1$s ya está lista con mejor escaneo y nuevas recetas.</string>
-    <string name="update_dialog_confirm">Actualizar</string>
+    <string name="update_dialog_message">La versión %1$s ya está disponible con mejoras en el escaneo de códigos y nuevas sugerencias de recetas.</string>
+    <string name="update_dialog_confirm">Actualizar ahora</string>
     <string name="update_dialog_later">Más tarde</string>
     <string name="privacy_policy_title">Política de privacidad</string>
     <string name="privacy_policy_body">ShelfLife guarda tus datos localmente en tu dispositivo. La cámara solo se utiliza para leer códigos de barra en vivo.</string>

@@ -84,17 +84,17 @@
     <string name="btn_remove">Entfernen</string>
     <string name="splash_loading">Initialisiere Ablauf-Radar...</string>
     <string name="rate_dialog_title">Gefällt dir ShelfLife?</string>
-    <string name="rate_dialog_message">Du hast Lebensmittel vor der Tonne gerettet! Deine Bewertung hilft anderen Haushalten.</string>
-    <string name="rate_dialog_confirm">Bei Google Play bewerten</string>
-    <string name="rate_dialog_later">Später</string>
+    <string name="rate_dialog_message">Du hast Lebensmittel vor der Tonne gerettet! Deine Bewertung auf Google Play hilft weiteren Haushalten, Lebensmittelverschwendung zu stoppen.</string>
+    <string name="rate_dialog_confirm">Auf Google Play bewerten</string>
+    <string name="rate_dialog_later">Vielleicht später</string>
     <string name="rate_dialog_never">Nicht mehr fragen</string>
     <string name="share_dialog_title">Gemeinsam gegen Food Waste!</string>
-    <string name="share_dialog_message">Spare Geld und rette Lebensmittel mit ShelfLife. Empfehle es weiter!</string>
-    <string name="share_dialog_confirm">App teilen</string>
+    <string name="share_dialog_message">Du hast bares Geld gespart und Lebensmittel gerettet. Empfehle ShelfLife deinen Freunden und deiner Familie!</string>
+    <string name="share_dialog_confirm">ShelfLife teilen</string>
     <string name="share_dialog_dismiss">Jetzt nicht</string>
-    <string name="share_text_content">Teste ShelfLife: Smart Pantry &amp; Expiry Radar! Verwalte Mindesthaltbarkeitsdaten und finde passende Rezepte: https://play.google.com/store/apps/details?id=com.aistudio.shelflife.pzqk</string>
-    <string name="update_dialog_title">Update verfügbar</string>
-    <string name="update_dialog_message">Version %1$s steht bereit mit optimiertem Scanner.</string>
+    <string name="share_text_content">Teste ShelfLife: Smart Pantry &amp; Expiry Radar! Verwalte Mindesthaltbarkeitsdaten mit Barcode-Scanner und koche passende Rezepte vor Ablauf: https://play.google.com/store/apps/details?id=com.soloprono.shelflife</string>
+    <string name="update_dialog_title">App-Update verfügbar</string>
+    <string name="update_dialog_message">Version %1$s ist verfügbar mit optimierter Barcode-Erkennung und neuen Rezeptideen.</string>
     <string name="update_dialog_confirm">Jetzt aktualisieren</string>
     <string name="update_dialog_later">Später</string>
     <string name="privacy_policy_title">Datenschutzerklärung</string>

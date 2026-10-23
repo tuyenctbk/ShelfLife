@@ -115,7 +115,7 @@
     <string name="share_dialog_message">You\'ve saved real money and prevented food waste with ShelfLife. Recommend it to your friends and family!</string>
     <string name="share_dialog_confirm">Share ShelfLife</string>
     <string name="share_dialog_dismiss">Not Now</string>
-    <string name="share_text_content">Check out ShelfLife: Smart Pantry &amp; Expiry Radar! It tracks food expiration dates with barcode scanning and suggests recipes for ingredients before they spoil: https://play.google.com/store/apps/details?id=com.aistudio.shelflife.pzqk</string>
+    <string name="share_text_content">Check out ShelfLife: Smart Pantry &amp; Expiry Radar! It tracks food expiration dates with barcode scanning and suggests recipes for ingredients before they spoil: https://play.google.com/store/apps/details?id=com.soloprono.shelflife</string>
 
     <!-- Update Dialog -->
     <string name="update_dialog_title">App Update Available</string>

@@ -78,6 +78,7 @@ import coil.compose.AsyncImage
 import coil.compose.SubcomposeAsyncImage
 import com.example.R
 import com.example.data.model.MealRecipe
+import com.example.ui.engagement.EngagementManager
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -86,6 +87,7 @@ fun RescueRecipesScreen(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
+    val engagementManager = remember { EngagementManager(context) }
     val expiringItems by viewModel.expiringSoonItems.collectAsState()
     val recipes by viewModel.matchedRecipes.collectAsState()
     val isLoading by viewModel.isLoadingRecipes.collectAsState()
@@ -316,6 +318,7 @@ fun RescueRecipesScreen(
                             context.startActivity(intent)
                         },
                         onCookedIt = {
+                            engagementManager.recordRecipeCooked()
                             // Mark matched expiring items as consumed!
                             expiringItems.forEach { item ->
                                 val lower = item.name.lowercase()
