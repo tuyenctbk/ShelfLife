@@ -28,6 +28,7 @@ import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -151,7 +152,7 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
                         modifier = Modifier
                             .windowInsetsPadding(WindowInsets.navigationBars)
                             .testTag("bottom_navigation_bar"),
-                        containerColor = Color.White
+                        containerColor = MaterialTheme.colorScheme.surface
                     ) {
                         ShelfTab.entries.forEach { tab ->
                             val isSelected = currentTab == tab
@@ -187,10 +188,12 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
                                     )
                                 },
                                 colors = NavigationBarItemDefaults.colors(
-                                    selectedIconColor = EmeraldPrimary,
-                                    selectedTextColor = EmeraldPrimary,
-                                    indicatorColor = Color(0xFFDCFCE7)
-                               ),
+                                    selectedIconColor = MaterialTheme.colorScheme.primary,
+                                    selectedTextColor = MaterialTheme.colorScheme.primary,
+                                    indicatorColor = MaterialTheme.colorScheme.primaryContainer,
+                                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant
+                                ),
                                 modifier = Modifier.testTag(tab.tag)
                             )
                         }
@@ -203,10 +206,10 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
                     .fillMaxSize()
                     .padding(innerPadding)
             ) {
-                // NavigationRail for tablets, foldables, and desktop/DeX
+                // NavigationRail for tablets, foldables, and desktop/DeX/TV
                 if (isWideScreen) {
                     NavigationRail(
-                        containerColor = Color.White,
+                        containerColor = MaterialTheme.colorScheme.surface,
                         modifier = Modifier
                             .fillMaxHeight()
                             .testTag("tablet_navigation_rail")
@@ -245,9 +248,11 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
                                     )
                                 },
                                 colors = NavigationRailItemDefaults.colors(
-                                    selectedIconColor = EmeraldPrimary,
-                                    selectedTextColor = EmeraldPrimary,
-                                    indicatorColor = Color(0xFFDCFCE7)
+                                    selectedIconColor = MaterialTheme.colorScheme.primary,
+                                    selectedTextColor = MaterialTheme.colorScheme.primary,
+                                    indicatorColor = MaterialTheme.colorScheme.primaryContainer,
+                                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant
                                 ),
                                 modifier = Modifier.testTag(tab.tag)
                             )
@@ -264,7 +269,7 @@ fun ShelfLifeApp(viewModel: PantryViewModel = viewModel()) {
                 ) {
                     Box(
                         modifier = Modifier
-                            .widthIn(max = 840.dp)
+                            .widthIn(max = 1200.dp)
                             .fillMaxSize()
                     ) {
                         Crossfade(

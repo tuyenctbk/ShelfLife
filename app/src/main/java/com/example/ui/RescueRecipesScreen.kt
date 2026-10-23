@@ -57,6 +57,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -67,6 +75,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import coil.compose.SubcomposeAsyncImage
 import com.example.R
 import com.example.data.model.MealRecipe
 
@@ -120,7 +129,7 @@ fun RescueRecipesScreen(
                         text = stringResource(R.string.rescue_subtitle),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
+                        maxLines = 2,
                         overflow = TextOverflow.Ellipsis
                     )
                 }
@@ -331,12 +340,23 @@ fun RecipeCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val isDark = isSystemInDarkTheme()
+    var isFocused by remember { mutableStateOf(false) }
+    val focusScale by animateFloatAsState(targetValue = if (isFocused) 1.02f else 1.0f, label = "recipeFocusScale")
+
     Card(
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = if (isFocused) 6.dp else 2.dp),
+        border = if (isFocused) {
+            BorderStroke(2.5.dp, MaterialTheme.colorScheme.primary)
+        } else {
+            BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f))
+        },
         modifier = modifier
             .fillMaxWidth()
+            .scale(focusScale)
+            .onFocusChanged { isFocused = it.isFocused }
             .clickable(onClick = onClick)
             .testTag("recipe_card_${recipe.id}")
     ) {
@@ -344,15 +364,43 @@ fun RecipeCard(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(12.dp)
         ) {
-            // Meal Thumbnail
-            AsyncImage(
-                model = recipe.thumbnailUrl,
-                contentDescription = recipe.title,
-                contentScale = ContentScale.Crop,
+            // Meal Thumbnail with graceful fallback
+            Box(
+                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .size(76.dp)
                     .clip(RoundedCornerShape(12.dp))
-            )
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
+            ) {
+                if (!recipe.thumbnailUrl.isNullOrBlank()) {
+                    SubcomposeAsyncImage(
+                        model = recipe.thumbnailUrl,
+                        contentDescription = recipe.title,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.matchParentSize(),
+                        loading = {
+                            Box(contentAlignment = Alignment.Center, modifier = Modifier.matchParentSize()) {
+                                CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp)
+                            }
+                        },
+                        error = {
+                            Icon(
+                                imageVector = Icons.Default.Restaurant,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.size(32.dp)
+                            )
+                        }
+                    )
+                } else {
+                    Icon(
+                        imageVector = Icons.Default.Restaurant,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(32.dp)
+                    )
+                }
+            }
 
             Spacer(modifier = Modifier.width(12.dp))
 
@@ -410,7 +458,7 @@ fun RecipeCard(
                         text = stringResource(R.string.rescues_prefix) + recipe.matchedPantryIngredients.joinToString(", "),
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = Color(0xFFD97706),
+                        color = if (isDark) Color(0xFFFBBF24) else Color(0xFFD97706),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -437,14 +485,42 @@ fun RecipeDetailSheetContent(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth()
         ) {
-            AsyncImage(
-                model = recipe.thumbnailUrl,
-                contentDescription = recipe.title,
-                contentScale = ContentScale.Crop,
+            Box(
+                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .size(80.dp)
                     .clip(RoundedCornerShape(16.dp))
-            )
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
+            ) {
+                if (!recipe.thumbnailUrl.isNullOrBlank()) {
+                    SubcomposeAsyncImage(
+                        model = recipe.thumbnailUrl,
+                        contentDescription = recipe.title,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.matchParentSize(),
+                        loading = {
+                            Box(contentAlignment = Alignment.Center, modifier = Modifier.matchParentSize()) {
+                                CircularProgressIndicator(modifier = Modifier.size(24.dp), strokeWidth = 2.dp)
+                            }
+                        },
+                        error = {
+                            Icon(
+                                imageVector = Icons.Default.Restaurant,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.size(36.dp)
+                            )
+                        }
+                    )
+                } else {
+                    Icon(
+                        imageVector = Icons.Default.Restaurant,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(36.dp)
+                    )
+                }
+            }
 
             Spacer(modifier = Modifier.width(16.dp))
 

@@ -13,8 +13,8 @@
     <!-- Expiry Radar -->
     <string name="radar_active_title">EXPIRY RADAR ACTIVE</string>
     <string name="radar_expiring_count">%1$d item(s) expiring in &lt;= 3 days!</string>
-    <string name="radar_query_recipes">Query TheMealDB For Rescue Recipes</string>
-    <string name="expiring_prefix">Expiring: </string>
+    <string name="radar_query_recipes">Find Rescue Recipes</string>
+    <string name="expiring_prefix">"Expiring: "</string>
 
     <!-- Search & Filters -->
     <string name="search_hint">Search pantry items, brands, barcodes...</string>
@@ -48,7 +48,7 @@
     <string name="rescue_instructions">Step-by-Step Instructions</string>
     <string name="rescue_watch_youtube">Watch Video Guide on YouTube</string>
     <string name="rescue_cooked_it">Cooked It! Mark Ingredients Consumed</string>
-    <string name="rescues_prefix">Rescues: </string>
+    <string name="rescues_prefix">"Rescues: "</string>
 
     <!-- Impact & Stats Screen -->
     <string name="stats_title">Pantry Health &amp; Impact</string>

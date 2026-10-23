@@ -227,62 +227,64 @@ fun ScannerScreen(
                         }
                     }
 
-                    // Laser scan line animation
-                    val infiniteTransition = rememberInfiniteTransition(label = "laser")
-                    val laserOffset by infiniteTransition.animateFloat(
-                        initialValue = 0.1f,
-                        targetValue = 0.9f,
-                        animationSpec = infiniteRepeatable(
-                            animation = tween(1500, easing = FastOutSlowInEasing),
-                            repeatMode = RepeatMode.Reverse
-                        ),
-                        label = "laserLine"
-                    )
+                    if (hasCameraPermission) {
+                        // Laser scan line animation
+                        val infiniteTransition = rememberInfiniteTransition(label = "laser")
+                        val laserOffset by infiniteTransition.animateFloat(
+                            initialValue = 0.1f,
+                            targetValue = 0.9f,
+                            animationSpec = infiniteRepeatable(
+                                animation = tween(1500, easing = FastOutSlowInEasing),
+                                repeatMode = RepeatMode.Reverse
+                            ),
+                            label = "laserLine"
+                        )
 
-                    // Reticle overlay
-                    Box(
-                        modifier = Modifier
-                            .size(180.dp, 120.dp)
-                            .align(Alignment.Center)
-                            .border(2.dp, Color(0xFF22C55E), RoundedCornerShape(12.dp))
-                    )
+                        // Reticle overlay
+                        Box(
+                            modifier = Modifier
+                                .size(180.dp, 120.dp)
+                                .align(Alignment.Center)
+                                .border(2.dp, Color(0xFF22C55E), RoundedCornerShape(12.dp))
+                        )
 
-                    // Laser horizontal beam with safe offset
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth(0.7f)
-                            .height(2.dp)
-                            .align(Alignment.TopCenter)
-                            .offset(y = (240 * laserOffset).dp)
-                            .background(Color(0xFFEF4444))
-                    )
+                        // Laser horizontal beam with safe offset
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth(0.7f)
+                                .height(2.dp)
+                                .align(Alignment.TopCenter)
+                                .offset(y = (240 * laserOffset).dp)
+                                .background(Color(0xFFEF4444))
+                        )
 
-                    // Status chip on bottom of camera
-                    Surface(
-                        color = Color.Black.copy(alpha = 0.65f),
-                        shape = RoundedCornerShape(12.dp),
-                        modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                            .padding(bottom = 12.dp)
-                    ) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                        // Status chip on bottom of camera
+                        Surface(
+                            color = Color.Black.copy(alpha = 0.65f),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier
+                                .align(Alignment.BottomCenter)
+                                .padding(bottom = 12.dp)
                         ) {
-                            Icon(
-                                imageVector = Icons.Default.QrCodeScanner,
-                                contentDescription = null,
-                                tint = Color(0xFF4ADE80),
-                                modifier = Modifier.size(16.dp)
-                            )
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Text(
-                                text = stringResource(R.string.scanner_align_hint),
-                                color = Color.White,
-                                fontSize = 11.sp,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis
-                            )
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.QrCodeScanner,
+                                    contentDescription = null,
+                                    tint = Color(0xFF4ADE80),
+                                    modifier = Modifier.size(16.dp)
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(
+                                    text = stringResource(R.string.scanner_align_hint),
+                                    color = Color.White,
+                                    fontSize = 11.sp,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            }
                         }
                     }
                 }

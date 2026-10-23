@@ -2,7 +2,10 @@ package com.example.ui
 
 import android.widget.Toast
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -108,8 +111,11 @@ fun PantryStatsScreen(
 
             // Hero Savings Card
             item {
+                val isDark = isSystemInDarkTheme()
                 Card(
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFFDCFCE7)),
+                    colors = CardDefaults.cardColors(
+                        containerColor = if (isDark) Color(0xFF143823) else Color(0xFFDCFCE7)
+                    ),
                     shape = RoundedCornerShape(20.dp),
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -139,19 +145,19 @@ fun PantryStatsScreen(
                                 text = stringResource(R.string.stats_money_saved_title),
                                 fontSize = 11.sp,
                                 fontWeight = FontWeight.ExtraBold,
-                                color = Color(0xFF166534),
+                                color = if (isDark) Color(0xFF86EFAC) else Color(0xFF166534),
                                 letterSpacing = 1.sp
                             )
                             Text(
                                 text = "$${String.format("%.2f", dollarsSaved)}",
                                 fontSize = 28.sp,
                                 fontWeight = FontWeight.Black,
-                                color = Color(0xFF14532D)
+                                color = if (isDark) Color(0xFF4ADE80) else Color(0xFF14532D)
                             )
                             Text(
                                 text = stringResource(R.string.stats_rescued_sub, consumedItems.size),
                                 fontSize = 12.sp,
-                                color = Color(0xFF166534)
+                                color = if (isDark) Color(0xFF86EFAC) else Color(0xFF166534)
                             )
                         }
                     }
@@ -160,6 +166,12 @@ fun PantryStatsScreen(
 
             // Key Metrics Grid (Adaptive for narrow phones vs tablets)
             item {
+                val isDark = isSystemInDarkTheme()
+                val rescuedBg = if (isDark) Color(0xFF172554) else Color(0xFFEFF6FF)
+                val rescuedIcon = if (isDark) Color(0xFF60A5FA) else Color(0xFF2563EB)
+                val spoiledBg = if (isDark) Color(0xFF3B1212) else Color(0xFFFEF2F2)
+                val spoiledIcon = if (isDark) Color(0xFFF87171) else Color(0xFFDC2626)
+
                 BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
                     val isNarrow = maxWidth < 440.dp
                     if (isNarrow) {
@@ -181,8 +193,8 @@ fun PantryStatsScreen(
                                     value = "${consumedItems.size}",
                                     subtext = stringResource(R.string.stats_rescued_sub_short),
                                     icon = Icons.Default.CheckCircle,
-                                    containerColor = Color(0xFFEFF6FF),
-                                    iconColor = Color(0xFF2563EB),
+                                    containerColor = rescuedBg,
+                                    iconColor = rescuedIcon,
                                     modifier = Modifier.weight(1f)
                                 )
                             }
@@ -191,8 +203,8 @@ fun PantryStatsScreen(
                                 value = "${wastedItems.size}",
                                 subtext = stringResource(R.string.stats_spoiled_sub),
                                 icon = Icons.Default.Warning,
-                                containerColor = Color(0xFFFEF2F2),
-                                iconColor = Color(0xFFDC2626),
+                                containerColor = spoiledBg,
+                                iconColor = spoiledIcon,
                                 modifier = Modifier.fillMaxWidth()
                             )
                         }
@@ -214,8 +226,8 @@ fun PantryStatsScreen(
                                 value = "${consumedItems.size}",
                                 subtext = stringResource(R.string.stats_rescued_sub_short),
                                 icon = Icons.Default.CheckCircle,
-                                containerColor = Color(0xFFEFF6FF),
-                                iconColor = Color(0xFF2563EB),
+                                containerColor = rescuedBg,
+                                iconColor = rescuedIcon,
                                 modifier = Modifier.weight(1f)
                             )
                             MetricCard(
@@ -223,8 +235,8 @@ fun PantryStatsScreen(
                                 value = "${wastedItems.size}",
                                 subtext = stringResource(R.string.stats_spoiled_sub),
                                 icon = Icons.Default.Warning,
-                                containerColor = Color(0xFFFEF2F2),
-                                iconColor = Color(0xFFDC2626),
+                                containerColor = spoiledBg,
+                                iconColor = spoiledIcon,
                                 modifier = Modifier.weight(1f)
                             )
                         }
@@ -435,12 +447,24 @@ fun SettingsRow(
     title: String,
     onClick: () -> Unit
 ) {
+    var isFocused by remember { mutableStateOf(false) }
+
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
+            .onFocusChanged { isFocused = it.isFocused }
+            .border(
+                if (isFocused) 2.dp else 0.dp,
+                MaterialTheme.colorScheme.primary,
+                RoundedCornerShape(8.dp)
+            )
+            .background(
+                if (isFocused) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.4f)
+                else Color.Transparent
+            )
             .clickable(onClick = onClick)
             .padding(horizontal = 12.dp, vertical = 14.dp)
     ) {

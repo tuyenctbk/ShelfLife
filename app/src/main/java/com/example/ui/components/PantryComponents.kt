@@ -44,12 +44,20 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -61,6 +69,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import coil.compose.SubcomposeAsyncImage
 import com.example.R
 import com.example.data.model.PantryItem
 import com.example.data.model.StorageLocation
@@ -70,12 +79,13 @@ fun DaysLeftBadge(
     days: Int,
     modifier: Modifier = Modifier
 ) {
+    val isDark = isSystemInDarkTheme()
     val (backgroundColor, textColor) = when {
-        days < 0 -> Color(0xFFFEE2E2) to Color(0xFFDC2626)
-        days == 0 -> Color(0xFFFEF2F2) to Color(0xFFEF4444)
-        days == 1 -> Color(0xFFFEF3C7) to Color(0xFFD97706)
-        days in 2..3 -> Color(0xFFFEF3C7) to Color(0xFFB45309)
-        else -> Color(0xFFDCFCE7) to Color(0xFF15803D)
+        days < 0 -> if (isDark) Color(0xFF450A0A) to Color(0xFFF87171) else Color(0xFFFEE2E2) to Color(0xFFDC2626)
+        days == 0 -> if (isDark) Color(0xFF450A0A) to Color(0xFFF87171) else Color(0xFFFEF2F2) to Color(0xFFEF4444)
+        days == 1 -> if (isDark) Color(0xFF451A03) to Color(0xFFFBBF24) else Color(0xFFFEF3C7) to Color(0xFFD97706)
+        days in 2..3 -> if (isDark) Color(0xFF451A03) to Color(0xFFFCD34D) else Color(0xFFFEF3C7) to Color(0xFFB45309)
+        else -> if (isDark) Color(0xFF064E3B) to Color(0xFF4ADE80) else Color(0xFFDCFCE7) to Color(0xFF15803D)
     }
 
     val text = when {
@@ -150,6 +160,9 @@ fun ExpiryRadarBanner(
     modifier: Modifier = Modifier
 ) {
     AnimatedVisibility(visible = expiringItems.isNotEmpty()) {
+        val isDark = isSystemInDarkTheme()
+        var isBtnFocused by remember { mutableStateOf(false) }
+
         val infiniteTransition = rememberInfiniteTransition(label = "radarPulse")
         val pulseScale by infiniteTransition.animateFloat(
             initialValue = 0.95f,
@@ -163,12 +176,16 @@ fun ExpiryRadarBanner(
 
         Card(
             colors = CardDefaults.cardColors(
-                containerColor = Color(0xFFFFFBEB)
+                containerColor = if (isDark) Color(0xFF261D10) else Color(0xFFFFFBEB)
             ),
             shape = RoundedCornerShape(20.dp),
             modifier = modifier
                 .fillMaxWidth()
-                .border(1.5.dp, Color(0xFFFDE68A), RoundedCornerShape(20.dp))
+                .border(
+                    1.5.dp,
+                    if (isDark) Color(0xFFD97706).copy(alpha = 0.6f) else Color(0xFFFDE68A),
+                    RoundedCornerShape(20.dp)
+                )
                 .testTag("expiry_radar_banner")
         ) {
             Column(
@@ -184,12 +201,12 @@ fun ExpiryRadarBanner(
                             .size(36.dp)
                             .scale(pulseScale)
                             .clip(CircleShape)
-                            .background(Color(0xFFFEF3C7))
+                            .background(if (isDark) Color(0xFF3B2A14) else Color(0xFFFEF3C7))
                     ) {
                         Icon(
                             imageVector = Icons.Default.Radar,
                             contentDescription = "Radar",
-                            tint = Color(0xFFD97706),
+                            tint = if (isDark) Color(0xFFFBBF24) else Color(0xFFD97706),
                             modifier = Modifier.size(22.dp)
                         )
                     }
@@ -197,7 +214,7 @@ fun ExpiryRadarBanner(
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = stringResource(R.string.radar_active_title),
-                            color = Color(0xFF92400E),
+                            color = if (isDark) Color(0xFFFDE68A) else Color(0xFF92400E),
                             fontWeight = FontWeight.ExtraBold,
                             fontSize = 12.sp,
                             letterSpacing = 0.5.sp,
@@ -206,7 +223,7 @@ fun ExpiryRadarBanner(
                         )
                         Text(
                             text = stringResource(R.string.radar_expiring_count, expiringItems.size),
-                            color = Color(0xFF78350F),
+                            color = if (isDark) Color(0xFFFEF3C7) else Color(0xFF78350F),
                             fontWeight = FontWeight.SemiBold,
                             fontSize = 13.sp,
                             maxLines = 2,
@@ -221,7 +238,7 @@ fun ExpiryRadarBanner(
                 Text(
                     text = stringResource(R.string.expiring_prefix) + expiringItems.joinToString(", ") { it.name },
                     fontSize = 12.sp,
-                    color = Color(0xFF78350F),
+                    color = if (isDark) Color(0xFFFCD34D) else Color(0xFF78350F),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -231,12 +248,18 @@ fun ExpiryRadarBanner(
                 Button(
                     onClick = onFindRecipesClicked,
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFD97706),
-                        contentColor = Color.White
+                        containerColor = if (isDark) Color(0xFFF59E0B) else Color(0xFFD97706),
+                        contentColor = if (isDark) Color(0xFF1E1508) else Color.White
                     ),
                     shape = RoundedCornerShape(12.dp),
                     modifier = Modifier
                         .fillMaxWidth()
+                        .onFocusChanged { isBtnFocused = it.isFocused }
+                        .border(
+                            if (isBtnFocused) 2.5.dp else 0.dp,
+                            MaterialTheme.colorScheme.primary,
+                            RoundedCornerShape(12.dp)
+                        )
                         .testTag("rescue_recipes_button")
                 ) {
                     Icon(
@@ -331,17 +354,36 @@ fun PantryItemCard(
     onDeleteClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val isDark = isSystemInDarkTheme()
     val daysLeft = item.daysUntilExpiry()
     val isUrgent = daysLeft in 0..3
+    var isFocused by remember { mutableStateOf(false) }
+    val focusScale by animateFloatAsState(targetValue = if (isFocused) 1.02f else 1.0f, label = "pantryItemFocusScale")
 
     Card(
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (isUrgent) Color(0xFFFFFBEB) else MaterialTheme.colorScheme.surface
+            containerColor = if (isUrgent) {
+                if (isDark) Color(0xFF261D10) else Color(0xFFFFFBEB)
+            } else MaterialTheme.colorScheme.surface
         ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = if (isFocused) 6.dp else 2.dp),
+        border = if (isFocused) {
+            BorderStroke(2.5.dp, MaterialTheme.colorScheme.primary)
+        } else {
+            BorderStroke(
+                1.dp,
+                if (isUrgent) {
+                    if (isDark) Color(0xFFD97706).copy(alpha = 0.5f) else Color(0xFFFDE68A)
+                } else {
+                    MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f)
+                }
+            )
+        },
         modifier = modifier
             .fillMaxWidth()
+            .scale(focusScale)
+            .onFocusChanged { isFocused = it.isFocused }
             .clickable(onClick = onItemClick)
             .testTag("pantry_item_${item.id}")
     ) {
@@ -358,11 +400,23 @@ fun PantryItemCard(
                     .background(MaterialTheme.colorScheme.surfaceVariant)
             ) {
                 if (!item.imageUrl.isNullOrBlank()) {
-                    AsyncImage(
+                    SubcomposeAsyncImage(
                         model = item.imageUrl,
                         contentDescription = item.name,
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier.matchParentSize()
+                        modifier = Modifier.matchParentSize(),
+                        loading = {
+                            Box(contentAlignment = Alignment.Center, modifier = Modifier.matchParentSize()) {
+                                CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
+                            }
+                        },
+                        error = {
+                            StorageLocationIcon(
+                                locationStr = item.storageLocation,
+                                modifier = Modifier.size(28.dp),
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                        }
                     )
                 } else {
                     StorageLocationIcon(
