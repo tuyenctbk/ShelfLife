@@ -1,0 +1,261 @@
+Language,Language Code,App Title (<= 30 chars),Short Description (<= 80 chars),Full Description (<= 4000 chars)
+English (Default),en-US,ShelfLife: Smart Pantry Radar,"Scan grocery barcodes, track food expiry dates, and discover rescue recipes.","ShelfLife is your intelligent pantry manager and food-waste prevention companion. Scan grocery barcodes to track expiration dates effortlessly. When foods approach their 3-day expiration threshold, ShelfLife automatically queries recipe recommendations to help you cook and rescue those exact ingredients before they spoil.
+
+KEY FEATURES:
+
+• SMART BARCODE SCANNER
+Quickly scan grocery products with camera or manual barcode lookup. Powered by OpenFoodFacts and USDA FoodData Central, ShelfLife instantly pulls product titles, brands, Nutri-Scores, and full ingredient lists.
+
+• EXPIRY RADAR (3-DAY ALERT)
+Never let good groceries spoil in the back of your fridge again. The active Expiry Radar surfaces items expiring within 3 days with clear countdown badges and urgent freshness indicators.
+
+• RESCUE RECIPES FROM THEMEALDB
+When items reach their expiration radar threshold, ShelfLife queries TheMealDB API to recommend delicious, step-by-step recipes specifically utilizing your expiring ingredients. Watch video guides and mark meals as cooked with one tap.
+
+• PANTRY ZONES & CATEGORIZATION
+Organize your home inventory across Fridge, Pantry, and Freezer zones. Filter staples in seconds and keep grocery shopping organized.
+
+• FOOD WASTE PREVENTION METRICS
+Track the positive environmental and financial impact of your kitchen. Monitor your rescued vs. expired ratios, calculate money saved, and improve your household sustainability score.
+
+• PRIVACY-FIRST & LOCAL PERSISTENCE
+All pantry inventory records and statistics remain securely stored on your device using Android Room Database. No account creation required.
+
+Stop throwing away groceries. Download ShelfLife today to save money, cook creatively, and eliminate food waste!"
+Spanish,es-419,ShelfLife: Despensa y Radar,"Escanea códigos de barra, controla la caducidad y descubre recetas de rescate.","ShelfLife es tu gestor inteligente de despensa y compañero contra el desperdicio de alimentos. Escanea códigos de barras de tus compras para controlar fechas de caducidad sin esfuerzo. Cuando un producto está a 3 días de vencer, ShelfLife busca automáticamente recetas para aprovechar esos ingredientes antes de que se echen a perder.
+
+CARACTERÍSTICAS PRINCIPALES:
+
+• ESCÁNER INTELIGENTE DE CÓDIGOS DE BARRAS
+Escanea productos con la cámara o búsqueda manual. Con datos de OpenFoodFacts y USDA FoodData Central, ShelfLife obtiene al instante nombres, marcas, Nutri-Score y listas de ingredientes.
+
+• RADAR DE CADUCIDAD (ALERTA DE 3 DÍAS)
+No vuelvas a olvidar alimentos en el fondo de la nevera. El Radar de Caducidad destaca productos a 3 días de vencer con distintivos visuales claros.
+
+• RECETAS DE RESCATE CON THEMEALDB
+Cuando tus alimentos entran en zona de riesgo, ShelfLife consulta TheMealDB para sugerir recetas paso a paso que usan tus ingredientes exactos.
+
+• ZONAS DE ALMACENAMIENTO
+Organiza tus compras entre Refrigerador, Despensa y Congelador. Filtra productos rápidamente.
+
+• IMPACTO Y AHORRO ESTIMADO
+Monitorea cuántos productos salvaste del desperdicio y calcula el dinero que ahorras cada mes.
+
+• PRIVACIDAD TOTAL Y BASE DE DATOS LOCAL
+Toda tu despensa se almacena de forma segura en tu dispositivo. Sin registros obligatorios.
+
+¡Descarga ShelfLife y dile adiós al desperdicio de comida!"
+French,fr-FR,ShelfLife: Garde-Manger Radar,"Scannez vos codes, suivez la péremption et cuisinez des recettes antigaspi.","ShelfLife est votre gestionnaire intelligent de garde-manger et votre allié contre le gaspillage alimentaire. Scannez les codes-barres de vos courses pour suivre facilement les dates de péremption. Dès qu'un aliment arrive à 3 jours de sa date limite, ShelfLife recherche automatiquement des recettes adaptées pour cuisiner ces ingrédients avant qu'ils ne soient perdus.
+
+FONCTIONNALITÉS CLÉS :
+
+• SCANNER INTELLIGENT DE CODES-BARRES
+Scannez vos produits d'épicerie avec la caméra ou par saisie manuelle. Grâce à OpenFoodFacts et l'USDA, ShelfLife affiche instantanément les marques, le Nutri-Score et les ingrédients.
+
+• RADAR DE PÉREMPTION (ALERTE 3 JOURS)
+Ne laissez plus vos courses s'abîmer au fond du réfrigérateur. Le Radar met en évidence les aliments à consommer sous 3 jours avec des badges clairs.
+
+• RECETTES ANTIGASPI AVEC THEMEALDB
+ShelfLife interroge TheMealDB pour vous suggérer des plats gourmands et des vidéos guidées utilisant exactement vos ingrédients proches de la péremption.
+
+• ZONES DE STOCKAGE
+Répartissez vos produits entre Réfrigérateur, Placard et Congélateur pour une organisation idéale.
+
+• STATISTIQUES D'ÉCONOMIES & ANTIGASPI
+Suivez les repas sauvés de la poubelle et visualisez l'argent économisé au quotidien.
+
+• RESPECT DE LA VIE PRIVÉE & STOCKAGE LOCAL
+Toutes vos données sont conservées localement sur votre appareil Android.
+
+Cuisinez malin et réduisez le gaspillage alimentaire avec ShelfLife !"
+German,de-DE,ShelfLife: Smarter Vorrat,"Barcodes scannen, Mindesthaltbarkeit überwachen und Reste-Rezepte entdecken.","ShelfLife ist dein smarter Vorratsmanager gegen Lebensmittelverschwendung. Scanne Barcodes deiner Einkäufe, um Mindesthaltbarkeitsdaten mühelos im Blick zu behalten. Wenn Lebensmittel die 3-Tage-Grenze erreichen, schlägt dir ShelfLife automatisch Rezepte vor, um genau diese Zutaten rechtzeitig zu verkochen.
+
+HAUPTFUNKTIONEN:
+
+• SMARTER BARCODE-SCANNER
+Scanne Lebensmittel per Kamera oder Zahlencode. Angetrieben von OpenFoodFacts und USDA liefert ShelfLife sofort Produktnamen, Marken, Nutri-Scores und Zutatenlisten.
+
+• ABLAUF-RADAR (3-TAGE-FRÜHWARNSYSTEM)
+Vergiss nie wieder angebrochene Vorräte im Kühlschrank. Das Ablauf-Radar warnt rechtzeitig vor drohendem Verfall mit deutlichen Statusabzeichen.
+
+• RETTUNGS-REZEPTE DURCH THEMEALDB
+Erhalte passende Schritt-für-Schritt-Rezeptideen von TheMealDB, die deine ablaufenden Lebensmittel gezielt verwerten.
+
+• PRAKTISCHE LAGERBEREICHE
+Organisiere deine Bestände übersichtlich in Kühlschrank, Speisekammer und Gefrierschrank.
+
+• NACHHALTIGKEITS- & ERSPARNIS-STATISTIK
+Verfolge deine geretteten Lebensmittel, berechne gespartes Geld und verbessere deine Haushaltsbilanz.
+
+• LOKALER DATENSCHUTZ
+Alle Einträge verbleiben sicher in der lokalen Room-Datenbank auf deinem Smartphone.
+
+Hol dir ShelfLife und koche nachhaltig ohne Verschwendung!"
+Italian,it-IT,ShelfLife: Dispensa e Radar,"Scansiona codici a barre, traccia le scadenze e scopri ricette antispreco.","ShelfLife è il tuo assistente intelligente per la gestione della dispensa e la lotta allo spreco alimentare. Scansiona i codici a barre della tua spesa per tenere sotto controllo le scadenze. A 3 giorni dalla scadenza, ShelfLife ti suggerisce ricette perfette per cucinare quegli ingredienti prima che vadano a male.
+
+CARATTERISTICHE PRINCIPALI:
+
+• SCANNER CODICI A BARRE
+Scansiona alimenti con la fotocamera o inserimento manuale tramite OpenFoodFacts e USDA.
+
+• RADAR SCADENZE (ALLERTA 3 GIORNI)
+Monitora gli ingredienti più urgenti con avvisi visivi chiari.
+
+• RICETTE ANTISPRECO THEMEALDB
+Trova piatti deliziosi che utilizzano esattamente gli alimenti vicini alla scadenza.
+
+• ZONE FRIGO, DISPENSA E FREEZER
+Organizza con ordine ogni comparto della tua cucina.
+
+• STATISTICHE E DENARO RISPARMIATO
+Misura il tuo impatto ecologico ed economico nel tempo.
+
+• DATI SICURI IN LOCALE
+Nessun account richiesto, i tuoi dati restano sul tuo dispositivo."
+Portuguese,pt-BR,ShelfLife: Despensa e Radar,"Escaneie códigos de barra, monitore validades e cozinhe receitas de resgate.","ShelfLife é o seu organizador inteligente de despensa contra o desperdício de alimentos. Escaneie códigos de barras para acompanhar datas de validade. Quando um item estiver a 3 dias de vencer, o app sugere receitas práticas no TheMealDB para aproveitar tudo.
+
+DESTAQUES:
+
+• LEITOR DE CÓDIGOS DE BARRAS
+Integração com OpenFoodFacts e USDA para dados nutricionais e ingredientes.
+
+• RADAR DE VALIDADE
+Alertas para alimentos que precisam ser consumidos nos próximos 3 dias.
+
+• RECEITAS DE RESGATE
+Ideias culinárias passo a passo focadas no que você já tem em casa.
+
+• DIVISÃO POR AMBIENTES
+Organize entre Geladeira, Despensa e Congelador.
+
+• CONTROLE DE ECONOMIA
+Veja quantos reais você economizou evitando o descarte desnecessário.
+
+• PRIVACIDADE COMPLETA
+Armazenamento local seguro no seu celular."
+Russian,ru-RU,ShelfLife: Радар сроков,"Сканируйте штрихкоды, следите за сроками годности и готовьте по рецептам.","ShelfLife — ваш умный помощник для контроля запасов продуктов и предотвращения пищевых отходов. Сканируйте штрихкоды, отслеживайте сроки годности и получайте рецепты блюд из продуктов за 3 дня до истечения срока.
+
+ГЛАВНЫЕ ВОЗМОЖНОСТИ:
+• Сканер штрихкодов с базами данных OpenFoodFacts и USDA.
+• Радар сроков с предупреждением за 3 дня до порчи.
+• Поиск рецептов в TheMealDB под ваши ингредиенты.
+• Зоны хранения: холодильник, кладовая, морозилка.
+• Подсчет сэкономленных средств и предотвращенных отходов.
+• Локальное хранение данных без передачи третьим лицам."
+Japanese,ja-JP,ShelfLife: 賞味期限レーダー,バーコードをスキャンして賞味期限を管理。救済レシピで食品ロスを防ぎます。,"ShelfLifeは食品ロスを削減するスマートなパントリー管理アプリです。食料品のバーコードをスキャンして賞味期限を手軽に記録。期限が残り3日以内になると、TheMealDBと連携してその食材を使い切る美味しいレシピを自動提案します。
+
+主な特徴：
+• バーコードスキャン機能（OpenFoodFacts・USDA連携）
+• 3日前にお知らせする賞味期限レーダー
+• 残り食材を活用できるレスキューレシピ
+• 冷蔵庫・常温・冷凍庫の分類管理
+• 削減できた食品数と節約金額の可視化
+• 完全ローカル保存で安心のプライバシー"
+Korean,ko-KR,ShelfLife: 유통기한 레이더,바코드를 스캔해 유통기한을 관리하고 남은 재료 맞춤 구출 레시피를 찾으세요.,"ShelfLife는 음식물 쓰레기를 줄이고 식비를 절약하는 스마트 식품 관리 앱입니다. 장본 식품의 바코드를 스캔하여 유통기한을 손쉽게 추적하세요. 유통기한이 3일 이내로 다가오면 TheMealDB에서 해당 재료를 활용하는 레시피를 추천해 드립니다.
+
+주요 기능:
+• 실시간 바코드 스캐너 (OpenFoodFacts 및 USDA 지원)
+• 3일 전 임박 알림 유통기한 레이더
+• 만료 임박 재료 맞춤 구출 요리 레시피
+• 냉장실, 팬트리, 냉동실 공간별 맞춤 관리
+• 절약 금액 및 환경 기여도 통계
+• 기기 내 로컬 데이터 저장으로 철저한 개인정보 보호"
+Chinese Simplified,zh-CN,ShelfLife: 保质期雷达,扫描食品条形码，实时追踪保质期，智能推荐临期食材食谱，告别食物浪费。,"ShelfLife 是您的智能食品管理助手。只需扫描杂货条形码即可轻松记录到期日。当食品距离到期仅剩3天时，应用会自动查询 TheMealDB 食谱，帮助您在变质前巧妙利用食材。
+
+核心功能：
+• 智能条形码扫描器（支持 OpenFoodFacts 与 USDA）
+• 3天到期临界预警雷达
+• 临期食材拯救食谱推荐
+• 冷藏室、储藏室与冷冻室分类存放
+• 食品防浪费与资金节约统计
+• 本地 Room 数据库安全存储，无隐私泄露风险"
+Chinese Traditional,zh-TW,ShelfLife: 效期管理雷達,掃描條碼追蹤食品到期日，在效期倒數3天時推薦搶救食譜，減少剩食浪費。,"ShelfLife 是為智慧生活設計的食材效期管理工具。輕鬆掃描商品條碼，自動登記到期日期。當食材進入 3 天即期倒數時，系統會自動推薦適合料理的食譜，即時搶救食材。
+
+特色功能：
+• 條碼掃描辨識（整合 OpenFoodFacts 與 USDA）
+• 3天到期警示雷達
+• 即期食材美味料理食譜建議
+• 冷藏、常溫、冷凍三區靈活分類
+• 節省金錢與剩食防範數據分析
+• 純本機資料庫儲存，保障個人隱私"
+Vietnamese,vi-VN,ShelfLife: Radar Hạn Dùng,"Quét mã vạch thực phẩm, theo dõi hạn sử dụng và gợi ý công thức chống lãng phí.","ShelfLife là ứng dụng quản lý tủ thực phẩm thông minh giúp bạn tiết kiệm tiền và chống lãng phí đồ ăn. Quét mã vạch bao bì để theo dõi ngày hết hạn dễ dàng. Khi thực phẩm còn 3 ngày trước khi hết hạn, Radar sẽ tự động gợi ý các công thức nấu ăn ngon miệng từ TheMealDB để tận dụng ngay nguyên liệu.
+
+TÍNH NĂNG NỔI BẬT:
+• Quét mã vạch qua camera với cơ sở dữ liệu OpenFoodFacts & USDA.
+• Radar hạn dùng cảnh báo trước 3 ngày.
+• Công thức giải cứu nguyên liệu sắp hết hạn.
+• Phân chia ngăn tủ lạnh, tủ bếp và tủ đông.
+• Báo cáo số tiền tiết kiệm và lượng đồ ăn được giải cứu.
+• Dữ liệu lưu trữ an toàn ngay trên điện thoại."
+Arabic,ar,ShelfLife: رادار الصلاحية,امسح الباركود وتابع تواريخ انتهاء الصلاحية واكتشف وصفات ذكية لتجنب هدر الطعام.,"ShelfLife هو مدير المؤونة الذكي لمكافحة الهدر الغذائي. امسح الباركود بسهولة لمتابعة تواريخ الصلاحية، وعندما يتبقى 3 أيام فقط على انتهاء أي منتج، يقترح عليك التطبيق وصفات شهية من TheMealDB لاستخدام تلك المكونات في الوقت المناسب.
+
+المميزات:
+• ماسح باركود سريع يدعم قواعد بيانات OpenFoodFacts وUSDA.
+• رادار صلاحية منبه قبل 3 أيام من انتهاء المنتجات.
+• وصفات طهي ذكية تعتمد على ما لديك في المطبخ.
+• تنظيم المؤونة في الثلاجة والمجمد والرفوف.
+• إحصائيات دقيقة للمال الموفر والطعام المنقذ.
+• حفظ محلي آمن للبيانات على هاتفك."
+Hindi,hi-IN,ShelfLife: एक्सपायरी रडार,"किराना बारकोड स्कैन करें, एक्सपायरी ट्रैक करें और बचाव रेसिपी खोजें।","ShelfLife आपका स्मार्ट पेंट्री मैनेजर है जो भोजन की बर्बादी रोकने में मदद करता है। सामान के बारकोड स्कैन करके एक्सपायरी डेट ट्रैक करें। जब खाना खराब होने में 3 दिन बचे हों, तो ऐप उन सामग्रियों से स्वादिष्ट भोजन बनाने के लिए रेसिपी सुझाता है।
+
+मुख्य विशेषताएं:
+• OpenFoodFacts और USDA आधारित बारकोड स्कैनर
+• 3 दिन का एक्सपायरी अलर्ट रडार
+• TheMealDB से खाद्य बचाव रेसिपी सुझाव
+• फ्रिज, पेंट्री और फ्रीजर का अलग प्रबंधन
+• पैसे की बचत और खाद्य बर्बादी रोकथाम रिपोर्ट
+• सुरक्षित स्थानीय डेटा संग्रहण"
+Indonesian,id-ID,ShelfLife: Radar Kedaluwarsa,"Pindai barcode makanan, pantau tanggal kedaluwarsa, dan temukan resep hemat.","ShelfLife adalah pengelola pantry pintar untuk mencegah pemborosan makanan. Pindai barcode belanjaan untuk mencatat tanggal kedaluwarsa. Saat makanan tersisa 3 hari lagi, ShelfLife otomatis merekomendasikan resep lezat dari TheMealDB untuk menghabiskan bahan tersebut tepat waktu.
+
+FITUR UTAMA:
+• Pemindai barcode cepat dengan OpenFoodFacts & USDA.
+• Radar peringatan 3 hari sebelum makanan kedaluwarsa.
+• Rekomendasi resep penyelamat bahan makanan.
+• Kategori penyimpanan kulkas, pantry, dan freezer.
+• Statistik penghematan uang dan bahan pangan.
+• Penyimpanan lokal yang aman tanpa perlu login."
+Turkish,tr-TR,ShelfLife: Kiler Radarı,"Barkod tarayın, son kullanma tarihlerini izleyin ve kurtarma tarifleri bulun.","ShelfLife, gıda israfını önleyen akıllı kiler yöneticinizdir. Market ürünlerinin barkodlarını tarayarak son kullanma tarihlerini kolayca takip edin. Ürünlerin bozulmasına 3 gün kaldığında, ShelfLife elinizdeki malzemeleri kullanabileceğiniz lezzetli yemek tarifleri önerir.
+
+ÖZELLİKLER:
+• OpenFoodFacts ve USDA destekli hızlı barkod tarayıcı.
+• 3 gün önceden uyaran Son Kullanma Radarı.
+• İsrafı önleyen TheMealDB yemek tarifleri.
+• Buzdolabı, kiler ve dondurucu bölümleri.
+• Tasarruf edilen para ve kurtarılan gıda istatistikleri.
+• Cihazda yerel ve gizlilik odaklı veri saklama."
+Polish,pl-PL,ShelfLife: Radar Ważności,"Skanuj kody kreskowe, monitoruj daty ważności i odkrywaj przepisy less waste.","ShelfLife to inteligentny asystent spiżarni, który pomaga zapobiegać marnowaniu żywności. Skanuj kody kreskowe artykułów spożywczych i kontroluj terminy ważności. Gdy do końca terminu zostaną 3 dni, aplikacja zaproponuje przepisy kulinarne pozwalające na natychmiastowe wykorzystanie produktów.
+
+GŁÓWNE FUNKCJE:
+• Skaner kodów kreskowych z bazą OpenFoodFacts i USDA.
+• Radar ważności z ostrzeżeniem na 3 dni przed terminem.
+• Przepisy ratunkowe TheMealDB dopasowane do składników.
+• Podział na lodówkę, spiżarnię i zamrażarkę.
+• Raport zaoszczędzonych pieniędzy i uratowanych posiłków.
+• Pełna prywatność – dane przechowywane wyłącznie lokalnie."
+Dutch,nl-NL,ShelfLife: Slimme Voorraad,"Scan barcodes, bewaak houdbaarheid en ontdek recepten tegen voedselverspilling.","ShelfLife is jouw slimme voorraadbeheerder in de strijd tegen voedselverspilling. Scan barcodes van boodschappen om houdbaarheidsdata moeiteloos bij te houden. Zodra een product binnen 3 dagen vervalt, stelt ShelfLife handige recepten voor om die ingrediënten direct op te maken.
+
+BELANGRIJKSTE KENMERKEN:
+• Barcodescanner met OpenFoodFacts en USDA ondersteuning.
+• Houdbaarheidsradar met 3-dagen waarschuwing.
+• Reddingsrecepten via TheMealDB op basis van je voorraad.
+• Handige indeling voor koelkast, voorraadkast en vriezer.
+• Inzicht in gered voedsel en bespaarde euro's.
+• Lokale gegevensopslag voor maximale privacy."
+Thai,th-TH,ShelfLife: เรดาร์วันหมดอายุ,สแกนบาร์โค้ด บันทึกวันหมดอายุอาหาร และแนะนำสูตรเมนูช่วยลดขยะอาหารอย่างคุ้มค่า,"ShelfLife คือผู้ช่วยจัดการคลังอาหารอัจฉริยะที่ช่วยคุณหยุดยั้งการทิ้งอาหารโดยไม่จำเป็น เพียงสแกนบาร์โค้ดสินค้าเพื่อบันทึกวันหมดอายุอย่างง่ายดาย เมื่ออาหารเหลือเวลาอีกเพียง 3 วัน เรดาร์จะค้นหาสูตรอาหารจาก TheMealDB ให้คุณนำวัตถุดิบเหล่านั้นมาปรุงเป็นมื้ออร่อยได้ทันเวลา
+
+จุดเด่น:
+• สแกนบาร์โค้ดด่วนด้วยฐานข้อมูล OpenFoodFacts และ USDA
+• เรดาร์แจ้งเตือนล่วงหน้า 3 วันก่อนอาหารหมดอายุ
+• ค้นหาสูตรอาหารช่วยกู้ของสดที่กำลังจะเสีย
+• แยกหมวดหมู่ตู้เย็น ตู้เก็บของ และช่องแช่แข็ง
+• บันทึกสถิติเงินที่ประหยัดได้และมื้ออาหารที่ช่วยไว้
+• ข้อมูลบันทึกในเครื่องปลอดภัย ไม่ต้องใช้อินเทอร์เน็ตในการดูข้อมูล"
+Swedish,sv-SE,ShelfLife: Skafferi & Radar,"Skanna streckkoder, spåra bäst före-datum och laga mat med räddningsrecept.","ShelfLife är din smarta skafferiassistent som motverkar matsvinn. Skanna matvarornas streckkoder för att hålla koll på bäst före-datum. När maten har 3 dagar kvar föreslår ShelfLife automatiskt goda recept från TheMealDB för att du ska hinna använda råvarorna i tid.
+
+VIKTIGA FUNKTIONER:
+• Streckkodsläsare med stöd för OpenFoodFacts och USDA.
+• Utgångsradar med 3-dagars varsel.
+• Receptförslag anpassade efter råvarorna som måste ätas upp.
+• Praktiska zoner: kylskåp, skafferi och frys.
+• Statistik över sparade pengar och räddade råvaror.
+• All information lagras säkert lokalt på din telefon."

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ShelfLife: Smart Pantry & Expiry Radar</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+        }
+        h1 { color: #15803d; font-size: 28px; margin-bottom: 8px; }
+        h2 { color: #166534; font-size: 20px; margin-top: 24px; border-bottom: 2px solid #dcfce7; padding-bottom: 6px; }
+        p, li { color: #334155; font-size: 15px; }
+        .badge { display: inline-block; background-color: #dcfce7; color: #15803d; padding: 4px 12px; border-radius: 12px; font-weight: bold; font-size: 13px; }
+        .date { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge">Privacy First</span>
+        <h1>ShelfLife: Smart Pantry & Expiry Radar</h1>
+        <p class="date">Last Updated: October 15, 2026</p>
+
+        <p>ShelfLife ("we", "our", or "the app") values your privacy. This Privacy Policy explains our commitment to transparency regarding device permissions and data handling.</p>
+
+        <h2>1. Device-Local Data Storage</h2>
+        <p>ShelfLife is architected with a local-first approach. All pantry inventory records, expiration dates, custom notes, and waste-prevention statistics are stored securely and exclusively on your local device using Android Room Database. We do not transmit or sell your personal inventory records to any third party.</p>
+
+        <h2>2. Camera Permission</h2>
+        <p>The app requests camera access solely for the purpose of scanning barcode identifiers on grocery packaging in real time. Video frames are processed locally on your device for barcode symbol recognition and are never recorded, saved, or uploaded to any external server.</p>
+
+        <h2>3. External Public Data Queries</h2>
+        <p>When you scan a barcode or request recipe suggestions, the app communicates with public informational APIs:</p>
+        <ul>
+            <li><strong>OpenFoodFacts API:</strong> Transmits barcode strings to fetch public product names, nutritional scores, and ingredient text.</li>
+            <li><strong>TheMealDB API:</strong> Transmits generic culinary ingredient names (e.g., "milk", "spinach") to discover matching recipes for items near expiration.</li>
+            <li><strong>USDA FoodData Central:</strong> Queries public nutritional databases for nutrient profiles.</li>
+        </ul>
+        <p>None of these public queries include personal identifiers, account credentials, or device IDs.</p>
+
+        <h2>4. No Personal Data Collection</h2>
+        <p>We do not collect names, email addresses, phone numbers, payment details, or precise location coordinates.</p>
+
+        <h2>5. Policy Updates & Contact</h2>
+        <p>If we update this Privacy Policy, the revised version will be published within the app. For questions regarding our privacy practices, contact us at: <code>support@shelflife.app</code>.</p>
+    </div>
+</body>
+</html>

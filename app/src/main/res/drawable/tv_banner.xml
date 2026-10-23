@@ -1,0 +1,65 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- Rich emerald linear gradient backdrop -->
+    <path
+        android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="320"
+                android:endY="180"
+                android:type="linear">
+                <item android:color="#0F3D20" android:offset="0.0" />
+                <item android:color="#166534" android:offset="0.5" />
+                <item android:color="#15803D" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Decorative radar arcs -->
+    <path
+        android:pathData="M60,90m-45,0a45,45 0 1,1 90,0a45,45 0 1,1 -90,0"
+        android:strokeWidth="1.5"
+        android:strokeColor="#25FFFFFF"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M60,90m-28,0a28,28 0 1,1 56,0a28,28 0 1,1 -56,0"
+        android:strokeWidth="1.5"
+        android:strokeColor="#35FFFFFF"
+        android:fillColor="#00000000" />
+
+    <!-- Stylized Pantry Carton & Apple on TV Banner -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,80 l4,-6 h8 l4,6 v22 H44 Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M47,88 h10 v10 H47 Z" />
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M70,88 c-1.5,-4 -7,-4 -8.5,0 c-2.5,5.5 1.5,12 4.25,12 c2.75,0 6.75,-6.5 4.25,-12 Z" />
+    <path
+        android:fillColor="#86EFAC"
+        android:pathData="M66,84 c2.5,-2.5 5,-1 5,-1 c0,2.5 -1.5,4 -4,4 c-1,0 -1,-3 -1,-3 Z" />
+
+    <!-- Glowing Radar wave -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FDE047"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M74,68 A 16,16 0 0,1 86,80" />
+    <path
+        android:fillColor="#EAB308"
+        android:pathData="M68,76 a 2,2 0 1,1 4,0 a 2,2 0 1,1 -4,0" />
+
+    <!-- Horizontal Shelf Bar -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M38,104 h50 c1,0 2,0.8 2,1.8 v1.4 c0,1 -1,1.8 -2,1.8 H38 c-1,0 -2,-0.8 -2,-1.8 v-1.4 c0,-1 1,-1.8 2,-1.8 Z" />
+</vector>

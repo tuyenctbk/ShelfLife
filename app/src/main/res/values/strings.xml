@@ -1,0 +1,141 @@
+<resources>
+    <string name="app_name">ShelfLife</string>
+    <string name="tagline">Smart Pantry &amp; Expiry Radar</string>
+    <string name="sister_app_subtitle">ClaimVault &amp; OpenKitchen Sister Network</string>
+    <string name="smart_pantry_badge">SMART PANTRY</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_pantry">Pantry</string>
+    <string name="tab_scan">Scan</string>
+    <string name="tab_rescue">Rescue</string>
+    <string name="tab_impact">Impact</string>
+
+    <!-- Expiry Radar -->
+    <string name="radar_active_title">EXPIRY RADAR ACTIVE</string>
+    <string name="radar_expiring_count">%1$d item(s) expiring in &lt;= 3 days!</string>
+    <string name="radar_query_recipes">Query TheMealDB For Rescue Recipes</string>
+    <string name="expiring_prefix">Expiring: </string>
+
+    <!-- Search & Filters -->
+    <string name="search_hint">Search pantry items, brands, barcodes...</string>
+    <string name="filter_all">All</string>
+    <string name="loc_fridge">Fridge</string>
+    <string name="loc_pantry">Pantry</string>
+    <string name="loc_freezer">Freezer</string>
+
+    <!-- Scanner Screen -->
+    <string name="scanner_title">Smart Grocery Scanner</string>
+    <string name="scanner_subtitle">Scan any barcode to fetch ingredients from OpenFoodFacts &amp; USDA FoodData</string>
+    <string name="scanner_align_hint">Align barcode within target frame</string>
+    <string name="scanner_camera_permission_needed">Camera access allows live barcode scanning</string>
+    <string name="scanner_grant_permission">Grant Camera Permission</string>
+    <string name="scanner_preset_title">Quick Sample Barcodes (Emulator Ready):</string>
+    <string name="scanner_manual_title">Manual Barcode Lookup</string>
+    <string name="scanner_manual_hint">e.g. 0074236526448</string>
+    <string name="scanner_add_to_pantry">Add to Pantry Inventory</string>
+    <string name="scanner_storage_location">Storage Location:</string>
+    <string name="scanner_ingredients_prefix">Ingredients: </string>
+
+    <!-- Rescue Recipes Screen -->
+    <string name="rescue_title">Rescue Recipes</string>
+    <string name="rescue_subtitle">TheMealDB recipes matched to items expiring in &lt;= 3 days</string>
+    <string name="rescue_targeted_title">Expiring Ingredients Targeted:</string>
+    <string name="rescue_loading">Querying TheMealDB for matching recipes...</string>
+    <string name="rescue_no_alerts_title">No Expiry Alerts Right Now</string>
+    <string name="rescue_no_alerts_body">Your pantry items are all fresh! When foods near their 3-day mark, TheMealDB recipe suggestions will appear here automatically.</string>
+    <string name="rescue_search_popular">Search Popular Pantry Ideas</string>
+    <string name="rescue_required_ingredients">Required Ingredients</string>
+    <string name="rescue_instructions">Step-by-Step Instructions</string>
+    <string name="rescue_watch_youtube">Watch Video Guide on YouTube</string>
+    <string name="rescue_cooked_it">Cooked It! Mark Ingredients Consumed</string>
+    <string name="rescues_prefix">Rescues: </string>
+
+    <!-- Impact & Stats Screen -->
+    <string name="stats_title">Pantry Health &amp; Impact</string>
+    <string name="stats_subtitle">Track your food-waste prevention score and savings</string>
+    <string name="stats_money_saved_title">ESTIMATED MONEY SAVED</string>
+    <string name="stats_rescued_sub">%1$d grocery items rescued from waste</string>
+    <string name="stats_in_stock">In Stock</string>
+    <string name="stats_in_stock_sub">pantry items</string>
+    <string name="stats_rescued">Rescued</string>
+    <string name="stats_rescued_sub_short">consumed</string>
+    <string name="stats_spoiled">Spoiled</string>
+    <string name="stats_spoiled_sub">discarded</string>
+    <string name="stats_prevention_rate">Food Waste Prevention Rate</string>
+    <string name="stats_rate_good">Outstanding job! Your pantry sustainability score is in the top tier.</string>
+    <string name="stats_rate_improve">Keep checking the Expiry Radar and cooking rescue recipes to boost your rate!</string>
+    <string name="stats_recently_rescued">Recently Rescued Items</string>
+    <string name="stats_no_rescued_yet">Mark items as consumed from the Pantry tab or after cooking a Rescue Recipe to see your history here.</string>
+
+    <!-- Community & Engagement Settings in Stats -->
+    <string name="settings_section_title">Community &amp; Settings</string>
+    <string name="btn_rate_app">Rate ShelfLife</string>
+    <string name="btn_share_app">Share with Friends</string>
+    <string name="btn_check_updates">Check for Updates</string>
+    <string name="btn_privacy_policy">Privacy Policy</string>
+
+    <!-- Item Details & Dialogs -->
+    <string name="add_item_title">Add Pantry Item</string>
+    <string name="add_item_name_label">Item Name *</string>
+    <string name="add_item_name_hint">e.g. Tomatoes, Cheddar Cheese, Eggs</string>
+    <string name="add_item_brand_label">Brand / Store (Optional)</string>
+    <string name="add_item_brand_hint">e.g. Organic Valley, Trader Joe\'s</string>
+    <string name="add_item_expires_in">Expires in:</string>
+    <string name="add_item_quantity">Quantity</string>
+    <string name="add_item_unit">Unit</string>
+    <string name="add_item_notes">Notes (Optional)</string>
+    <string name="add_item_save">Save to Pantry</string>
+    <string name="quick_add">Add</string>
+    <string name="empty_pantry_title">Pantry is empty!</string>
+    <string name="empty_pantry_body">Scan grocery barcodes using OpenFoodFacts or add items manually to start tracking expiration dates.</string>
+    <string name="empty_pantry_scan_btn">Open Barcode Scanner</string>
+
+    <!-- Item Status & Actions -->
+    <string name="days_left">%1$d days left</string>
+    <string name="one_day_left">1 day left</string>
+    <string name="expires_today">Expires Today</string>
+    <string name="expired">Expired</string>
+    <string name="btn_find_recipes_item">Find Rescue Recipes with This Item</string>
+    <string name="btn_consumed">Consumed (Prevent Food Waste)</string>
+    <string name="btn_spoiled">Spoiled</string>
+    <string name="btn_remove">Remove</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_loading">Initializing Expiry Radar &amp; Pantry Catalog...</string>
+
+    <!-- Rating Dialog -->
+    <string name="rate_dialog_title">Enjoying ShelfLife?</string>
+    <string name="rate_dialog_message">You\'ve successfully rescued groceries from spoiling! Your rating on Google Play helps more families stop food waste.</string>
+    <string name="rate_dialog_confirm">Rate on Google Play</string>
+    <string name="rate_dialog_later">Maybe Later</string>
+    <string name="rate_dialog_never">Don\'t Ask Again</string>
+
+    <!-- Share Dialog -->
+    <string name="share_dialog_title">Share the Waste-Free Mission!</string>
+    <string name="share_dialog_message">You\'ve saved real money and prevented food waste with ShelfLife. Recommend it to your friends and family!</string>
+    <string name="share_dialog_confirm">Share ShelfLife</string>
+    <string name="share_dialog_dismiss">Not Now</string>
+    <string name="share_text_content">Check out ShelfLife: Smart Pantry &amp; Expiry Radar! It tracks food expiration dates with barcode scanning and suggests recipes for ingredients before they spoil: https://play.google.com/store/apps/details?id=com.aistudio.shelflife.pzqk</string>
+
+    <!-- Update Dialog -->
+    <string name="update_dialog_title">App Update Available</string>
+    <string name="update_dialog_message">Version %1$s is available with enhanced barcode resolution and new recipe suggestions.</string>
+    <string name="update_dialog_confirm">Update Now</string>
+    <string name="update_dialog_later">Later</string>
+
+    <!-- Privacy Policy Dialog -->
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="privacy_policy_body">ShelfLife is built local-first. All your pantry items, expiration dates, custom notes, and waste-prevention statistics are stored securely and exclusively on your local device using Android Room Database.\n\nCamera permission is used strictly for real-time barcode detection on your device. Video frames are never recorded, saved, or uploaded.\n\nPublic barcode queries to OpenFoodFacts and recipe matching via TheMealDB contain zero personal identifiable information.\n\nContact: support@shelflife.app</string>
+    <string name="close_btn">Close</string>
+    <string name="empty_search_results">No items match \'%1$s\'</string>
+    <string name="detail_location">Location</string>
+    <string name="detail_quantity">Quantity</string>
+    <string name="detail_category">Category</string>
+    <string name="detail_energy">Energy (USDA / OFF)</string>
+    <string name="detail_barcode">Barcode</string>
+    <string name="detail_ingredients">Ingredients (OpenFoodFacts):</string>
+    <string name="detail_notes">Notes:</string>
+    <string name="recipe_cuisine_suffix">%1$s Cuisine</string>
+    <string name="status_energy_unit">%1$d kcal / 100g</string>
+    <string name="app_up_to_date">ShelfLife is up to date (Version 1.0)</string>
+</resources>
